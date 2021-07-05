@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/services/services-web.min.js"></script>
+<link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps.css'>
+<script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js"></script>
+<html>
+	<head></head>
+	<body>
+		<div> 
+	        Location: 
+	        <input type="text" id="geoLocationQuery"><br> 
+	        <button id="geocodeBtn">Submit</button> 
+	    </div> 
+		<script>
+			var API_KEY = 'SLo2C6kdpi8qsegPF0yG5Sbbbpg8Tyjo';
+			document.getElementById('geocodeBtn').onclick = function () { 
+	            var geocodeOptions = { 
+	                query: document.getElementById('geoLocationQuery').value, 
+	                key: API_KEY 
+	            }; 
+	            // Look up the geocode of the given address 
+	            tt.services.geocode(geocodeOptions).then(function (geocodeRes) { 
+	                home = geocodeRes.results[0].position; 
+	                console.log(home);
+	               
+	                
+	    //             var reverseOptions = { 
+	    //                 position: geocodeRes.results[0].position, 
+	    //                 key: API_KEY
+	    //             } 
+	 
+					// // with our geocode, do a reverse look-up to get our original address back 
+	    //             tt.services.reverseGeocode(reverseOptions).then(function (reverseRes) { 
+	    //                 console.log(reverseRes); 
+	    //             }); 
+	            }); 
+	            location.href = "https://excitedsun58.qoom.space/~/homepage";
+	            
+	        }; 
+		</script>
+	</body>
+</html>
